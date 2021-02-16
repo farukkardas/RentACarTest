@@ -14,5 +14,6 @@ namespace Business.Constants
         public static string CarDailyPriceInvalid = "Araba günlük fiyatı 0 dan büyük olmalıdır.";
         public static string CarUndelivered = "Araba teslim edilmemiştir, kiralanamaz.";
         public static string CarRented = "Araba kiralandı.";
+        public static string CarNotDeleted = "Araba silinemedi!";
     }
 }

@@ -11,7 +11,7 @@ namespace DataAccess.Concrete
 {
    public class EfCarDal:EfEntityRepositoryBase<Car,CarRentContext>,ICarDal
     {
-        public List<CarDetailDto> GetCarDetail()
+        public List<CarDetailDto> GetAllCarDetails()
         {
             using (CarRentContext context = new CarRentContext())
             {
@@ -28,5 +28,7 @@ namespace DataAccess.Concrete
                 return result.ToList();
             }
         }
+
+      
     }
 }

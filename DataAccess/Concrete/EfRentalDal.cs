@@ -11,7 +11,7 @@ namespace DataAccess.Concrete
 {
     public class EfRentalDal : EfEntityRepositoryBase<Rental, CarRentContext>, IRentalDal
     {
-        public List<RentalDetailDto> GetRentalDetail()
+        public List<RentalDetailDto> GetAllRentalDetails()
         {
             using (CarRentContext context = new CarRentContext())
             {
