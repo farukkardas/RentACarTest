@@ -41,19 +41,19 @@ namespace Business.Concrete
         public IResult Add(Color color)
         {
             _colorDal.Add(color);
-            return new SuccessResult(UserMessages.Added);
+            return new SuccessResult(ColorMessages.Added);
         }
 
         public IResult Delete(Color color)
         {
             _colorDal.Delete(color);
-            return new SuccessResult(UserMessages.Deleted);
+            return new SuccessResult(ColorMessages.Deleted);
         }
 
         public IResult Update(Color color)
         {
             _colorDal.Update(color);
-            return new SuccessResult(UserMessages.Updated);
+            return new SuccessResult(ColorMessages.Updated);
         }
     }
 }

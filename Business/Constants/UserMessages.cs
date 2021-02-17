@@ -6,8 +6,8 @@ namespace Business.Constants
 {
     public static class UserMessages
     {
-        public static string Listed = "Tüm arabalar listelendi";
-        public static string Added = "Araba eklendi";
+        public static string Listed = "Tüm üyeler listelendi";
+        public static string Added = "Üye eklendi";
         public static string Deleted = "Üye silindi";
         public static string Updated = "Üye bilgileri güncellendi";
         public static string NotListed = "Üyeler listelenemedi!";

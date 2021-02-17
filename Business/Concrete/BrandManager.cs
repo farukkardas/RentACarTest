@@ -25,33 +25,33 @@ namespace Business.Concrete
             var result = _brandDal.GetAll();
             if (result.Count == 0)
             {
-                return new ErrorDataResult<List<Brand>>(ColorMessages.NotListed);
+                return new ErrorDataResult<List<Brand>>(BrandMessages.NotListed);
             }
 
-            return new SuccessDataResult<List<Brand>>(result, ColorMessages.Listed);
+            return new SuccessDataResult<List<Brand>>(result, BrandMessages.Listed);
         }
 
         public IDataResult<Brand> GetById(int id)
         {
-            return new SuccessDataResult<Brand>(_brandDal.Get(c => c.Id == id), ColorMessages.Listed);
+            return new SuccessDataResult<Brand>(_brandDal.Get(c => c.Id == id), BrandMessages.Listed);
         }
 
         public IResult Add(Brand brand)
         {
             _brandDal.Add(brand);
-            return new SuccessResult(UserMessages.Added);
+            return new SuccessResult(BrandMessages.Added);
         }
 
         public IResult Delete(Brand brand)
         {
             _brandDal.Delete(brand);
-            return new SuccessResult(UserMessages.Deleted);
+            return new SuccessResult(BrandMessages.Deleted);
         }
 
         public IResult Update(Brand brand)
         {
             _brandDal.Update(brand);
-            return new SuccessResult(UserMessages.Updated);
+            return new SuccessResult(BrandMessages.Updated);
         }
     }
 }
