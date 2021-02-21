@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
@@ -51,7 +53,7 @@ namespace Business.Concrete
             var result = _carDal.GetAllCarDetails();
             return new SuccessDataResult<List<CarDetailDto>>(result, CarMessages.CarsListed);
         }
-
+        [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(Car car)
         {
             _carDal.Add(car);

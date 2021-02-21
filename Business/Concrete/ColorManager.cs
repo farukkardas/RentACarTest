@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities;
 using Core.Utilities.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -37,7 +39,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Color>(_colorDal.Get(c => c.Id == id),ColorMessages.Listed);
         }
-
+        [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(Color color)
         {
             _colorDal.Add(color);

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
@@ -36,7 +38,7 @@ namespace Business.Concrete
             var result = _userDal.Get(p => p.Id == id);
             return new SuccessDataResult<User>(result,UserMessages.Listed);
         }
-
+        [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(User user)
         {
             _userDal.Add(user);
